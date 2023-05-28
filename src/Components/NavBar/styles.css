@@ -1,0 +1,75 @@
+.navBar {
+    height: 100px;
+    margin-bottom: 16px;
+}
+
+.imageLogo {
+    width: 90%;
+}
+
+.custom-toggler {
+    color: #2596be !important;
+    border: solid 2px #2596be !important;
+}
+
+.custom-toggler:hover, .custom-toggler:active {
+    border: none !important;
+    box-shadow: none;
+}
+
+.navItems {
+    margin-right: 24px;
+}
+
+.btnLink {
+    width: 100%;
+    border: solid #2596be 2px;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.btnLink:hover {
+    border: solid #2596be 4px;
+    box-shadow: 4px 4px 4px #2596be;
+}
+
+.btnLink:active {
+    box-shadow: none !important;
+}
+
+.link-navigation {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2596be;
+}
+
+@media (max-width: 576px) {
+    .navBar {
+        height: auto;
+    }
+
+    .navItems {
+        margin: 16px;
+    }
+
+    .link-navigation {
+        font-size: 0.9rem;
+    }
+}
+
+
+@media (max-width: 366px) {
+
+    .imageLogocontainer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        justify-self: center;
+    }
+
+    .link-navigation {
+        font-size: 0.8rem;
+    }
+}
