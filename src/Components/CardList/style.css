@@ -5,3 +5,17 @@
 .card:hover {
     box-shadow: 5px 5px 10px 4px black;
 }
+
+.btnFoter{
+    min-width: 90%;
+    font-size: large;
+    padding: 8px;
+    margin: 4px 0;
+}
+
+.btnFoter:hover{
+    opacity: 0.9;
+    color: black;
+    font-weight: 700;
+    box-shadow: 5px 5px 10px black;
+}

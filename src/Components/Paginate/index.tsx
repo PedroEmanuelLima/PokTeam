@@ -4,7 +4,6 @@ import {
     PaginationItem,
     PaginationLink
 } from 'reactstrap';
-import './style.css';
 import { IInforCurrentPage } from '../../base/Interfaces';
 import { clickInType } from '../../base/Types';
 

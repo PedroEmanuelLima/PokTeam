@@ -1,0 +1,41 @@
+.img-modal{
+    width: 45%;
+}
+
+.content-informatio-general {
+    width: 45%;
+}
+
+.informations-properties {
+    font-size: 2rem;
+}
+
+.informations-values {
+    margin-left: 8px;
+    font-size: 1.5rem;
+    font-weight:400 ;
+}
+
+@media (max-width: 576px) {
+    
+    .informations-properties {
+        font-size: 1.3rem;
+        flex-wrap: wrap;
+    }
+
+    .informations{
+        flex-wrap: wrap;
+    }
+    
+    .informations-values {
+        margin-left: 8px;
+        font-size: 1.1rem;
+        font-weight:400 ;
+        text-align: justify;
+    }
+}
+
+
+@media (max-width: 366px) {
+
+}

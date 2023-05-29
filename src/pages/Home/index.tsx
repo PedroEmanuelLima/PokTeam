@@ -7,8 +7,8 @@ import './styles.css';
 import api from "../../config";
 import InpuAndFilter from "../../Components/InputAndFilter";
 import CardList from "../../Components/CardList";
-import { IInforCurrentPage, IPokemon } from "../../base/Interfaces";
-import { expandPokemons } from "./Functions";
+import { IInforCurrentPage, IPokemon, IPokemonHome } from "../../base/Interfaces";
+import { expandPokemons } from "../../base/Functions";
 import Loading from "../../Components/Loading";
 import NotFound from "../../Components/NotFound";
 import Paginate from "../../Components/Paginate";
@@ -17,7 +17,7 @@ import { clickInType } from "../../base/Types";
 export default function Home() {
 
     const [loading, setLoading] = useState(true);
-    const [pokemonsList, setPokemonsList] = useState<IPokemon[]>([]);
+    const [pokemonsList, setPokemonsList] = useState<IPokemonHome[]>([]);
     const [typesPokemons, setTypesPokemons] = useState<string[]>([]);
     const [typeSelected, setTypeSelected] = useState<string>('');
     const [nameSearch, setNameSearch] = useState<string>('');
@@ -26,6 +26,19 @@ export default function Home() {
     async function handleSearchPokemon() {
         setLoading(true);
         try {
+            // Não tem nome nem tipo
+            if (!typeSelected.trim().length && !nameSearch.trim().length) {
+                const response = await api.get('/pokemon/?offset=0&limit=40');
+                setInfoCurrentPage({
+                    current: 1,
+                    next: response.data.next,
+                    previous: response.data.previous
+                })
+                const pokemons = await expandPokemons(response.data.results);
+                setPokemonsList(pokemons);
+                setLoading(false)
+                return;
+            }
             // Tem nome mas não tem tipo
             if (!typeSelected.trim().length) {
                 const response = await api.get(`/pokemon/${nameSearch.toLowerCase()}/`);
@@ -56,7 +69,7 @@ export default function Home() {
             const next = nextUrl[nextUrl?.length - 1];
             const response = await api.get(`/pokemon/${next}`);
             setInfoCurrentPage(prevState => ({
-                current: prevState!.current+1,
+                current: prevState!.current + 1,
                 next: response.data.next,
                 previous: response.data.previous
             }))
@@ -146,7 +159,7 @@ export default function Home() {
                     <NotFound /> :
                     <>
                         <CardList lista={pokemonsList} />
-                        {infoCurrentPage && <Paginate {...infoCurrentPage} handleCurrentPage={handleCurrentPage}/>}
+                        {infoCurrentPage && <Paginate {...infoCurrentPage} handleCurrentPage={handleCurrentPage} />}
                     </>
             }
         </Container >
