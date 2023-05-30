@@ -1,8 +1,8 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
-import { AlertProps, FadeProps } from 'reactstrap';
-import { IPokemon, IPokemonHome, ITeam } from '../base/Interfaces';
-const MAX_LENGTH_TEAM = 5;
-const TEAM_VARIABLE_NAME_IN_LOCALSTORAGE = "myTeam"
+import { AlertProps } from 'reactstrap';
+import { IPokemonHome, ITeam } from '../base/Interfaces';
+import { MAX_LENGTH_TEAM, TEAM_VARIABLE_NAME_IN_LOCALSTORAGE } from '../base/Contants';
+
 interface TeamProviderProps {
     children: ReactNode;
 }

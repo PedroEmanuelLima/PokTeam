@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Container, Alert } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 import './styles.css';
 import api from "../../config";
@@ -144,6 +144,7 @@ export default function Home() {
             setLoading(false);
         }
         fetchPokemons();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [typeSelected]);
 
     return (

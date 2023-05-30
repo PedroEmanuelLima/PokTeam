@@ -1,5 +1,5 @@
 import React from 'react';
-import { imageSadUrl } from '../../base/Contants';
+import { IMAGE_POKEMON_SAD } from '../../base/Contants';
 
 export default function NotFound() {
     return (
@@ -15,7 +15,8 @@ export default function NotFound() {
                 alignItems:'center',
                 justifyContent: 'center'
             }}>
-                <img src={imageSadUrl} alt="image sad"/>
+                {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+                <img src={IMAGE_POKEMON_SAD} alt="image sad"/>
                 <h4 className='text-primary'>Não foi encontrado nenhum Pókemon :(</h4>
             </div>
         </div>

@@ -12,7 +12,7 @@ import {
 } from 'reactstrap';
 
 import './styles.css'
-import { imageNav } from '../../base/Contants';
+import { IMAGE_NAV_BAR } from '../../base/Contants';
 
 export default function NavBar(args: NavProps) {
     const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +25,7 @@ export default function NavBar(args: NavProps) {
                 <NavbarBrand className='imageLogocontainer' href="/">
                     {/* eslint-disable-next-line jsx-a11y/alt-text */}
                     <img
-                        src={imageNav}
+                        src={IMAGE_NAV_BAR}
                         className='imageLogo'
                     />
                 </NavbarBrand>

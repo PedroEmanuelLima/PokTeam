@@ -1,5 +1,3 @@
-import { IPokemonHome } from "./Interfaces";
-
 export type statsType = {
     base_stat: number,
     name: string
