@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
     Row,
     Col,
@@ -16,58 +16,83 @@ import PokeballLoadGif from './../../assets/pokeball_load.gif';
 import './style.css';
 import ModalMoreInfoPokemon from '../ModalMoreInfoPokemon';
 import { expandFullPokemon } from '../../base/Functions';
+import { TeamContext } from '../../context/team.context';
 
 interface ICardListPorps {
-    lista: IPokemonHome[]
+    lista: IPokemonHome[],
+    addPokemon(pokemon: IPokemonHome): void,
+    removePokemon(pokemon: IPokemonHome): void
 }
 
-interface IModalProps{
+interface IModalProps {
     open: boolean,
     pokemon: IPokemon | null
 }
-export default function CardList({ lista }: ICardListPorps) {
-    const [isLoading, setIsLoading] = useState(true);
-    const [modalInformatios, setModalInformatios] = useState<IModalProps>({open: false, pokemon:  null});
+export default function CardList({ lista, addPokemon, removePokemon }: ICardListPorps) {
+    const [isImageLoading, setIsImageLoading] = useState(true);
+    const [modalInformatios, setModalInformatios] = useState<IModalProps>({ open: false, pokemon: null });
+    const [loadingFillPokemon, setloadingFillPokemon] = useState(true);
 
-    const toggleModal = async (id: number|null) => {
+    const { team } = useContext(TeamContext);
+
+    const toggleModal = async (id: number | null) => {
+        setloadingFillPokemon(true);
+        setModalInformatios({
+            open: !modalInformatios.open,
+            pokemon: null
+        });
         if (!modalInformatios.open && id) {
             const reponsePokemon = await expandFullPokemon(id)
             setModalInformatios({
                 open: !modalInformatios.open,
                 pokemon: reponsePokemon
             });
+            setloadingFillPokemon(false);
             return;
         }
         setModalInformatios({
             open: !modalInformatios.open,
             pokemon: null
         });
+        setloadingFillPokemon(false);
     }
 
     const handleImageLoad = () => {
-        setTimeout(() => setIsLoading(false), 500)
+        setIsImageLoading(false);
     };
 
     return (
         <>
             <ModalMoreInfoPokemon
+                loading={loadingFillPokemon}
                 isOpen={modalInformatios.open}
                 pokemon={modalInformatios.pokemon}
                 toggleModal={toggleModal}
+                key={modalInformatios.pokemon?.id}
             />
 
             <Row className='mt-2'>
                 {lista.map((pokemon) => (
-                    <Col sm="6" md="3" xs='6' xxl='4' key={pokemon.id}>
+                    <Col className='col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2' key={pokemon.id}>
                         <Card className='mt-4 text-center'>
-                            {isLoading && <CardImg src={PokeballLoadGif} alt='loadImage' />}
-                            <CardImg onLoad={handleImageLoad} top width="50%" src={pokemon.image} alt={pokemon.name} />
+                            <CardImg
+                                onError={handleImageLoad}
+                                onLoad={handleImageLoad}
+                                top width="50%"
+                                src={isImageLoading ? PokeballLoadGif : pokemon.image}
+                                alt={isImageLoading ? "Imagem de carregando" : pokemon.name}
+                            />
                             <CardBody>
                                 <CardTitle tag='h3'>{pokemon.name}</CardTitle>
                                 <CardSubtitle>{pokemon.types.map((type) => <span className='m-2' key={type}>{type}</span>)}</CardSubtitle>
                             </CardBody>
                             <CardFooter>
-                                <Button className='bg-success btnFoter'>Adicionar a time</Button>
+                                <Button
+                                    className={`${team.some((p) => p.id === pokemon.id) ? 'bg-danger' : 'bg-success'} btnFoter`}
+                                    onClick={() => team.some((p) => p.id === pokemon.id) ? removePokemon(pokemon) : addPokemon(pokemon)}
+                                >
+                                    {team.some((p) => p.id === pokemon.id) ? 'Remover do Time' : 'Adicionar ao Time'}
+                                </Button>
                                 <Button
                                     className='bg-info btnFoter'
                                     onClick={() => toggleModal(pokemon.id)}
