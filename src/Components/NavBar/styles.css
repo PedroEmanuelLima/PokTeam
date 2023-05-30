@@ -12,7 +12,8 @@
     border: solid 2px #2596be !important;
 }
 
-.custom-toggler:hover, .custom-toggler:active {
+.custom-toggler:hover,
+.custom-toggler:active {
     border: none !important;
     box-shadow: none;
 }
@@ -28,19 +29,17 @@
     margin-top: 8px;
 }
 
-.btnLink:hover {
-    border: solid #2596be 4px;
-    box-shadow: 4px 4px 4px #2596be;
-}
-
-.btnLink:active {
-    box-shadow: none !important;
-}
-
 .link-navigation {
     font-size: 1.5rem;
     font-weight: bold;
     color: #2596be;
+}
+
+@media (min-width: 768px) {
+    .btnLink:hover {
+        border: solid #2596be 4px;
+        box-shadow: 4px 4px 4px #000;
+    }
 }
 
 @media (max-width: 576px) {

@@ -10,13 +10,14 @@ import {
     NavbarText,
     NavProps,
 } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import './styles.css'
 import { IMAGE_NAV_BAR } from '../../base/Contants';
 
 export default function NavBar(args: NavProps) {
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
 
     const toggle = () => setIsOpen(!isOpen);
 
@@ -46,20 +47,32 @@ export default function NavBar(args: NavProps) {
                         <Nav className="me-auto" navbar >
                             <NavItem className='navItems'>
                                 <NavLink
-                                    className='btnLink'
+                                    className={`
+                                        btnLink
+                                        ${location.pathname === '/' && 'bg-primary'}
+                                    `}
                                     tag={Link} to="/"
                                 >
-                                    <h2 className='link-navigation'>
+                                    <h2 className={`
+                                        link-navigation
+                                        ${location.pathname === '/' && 'text-light'}
+                                    `}>
                                         Pókemons
                                     </h2>
                                 </NavLink>
                             </NavItem>
                             <NavItem className='navItems'>
                                 <NavLink
-                                    className='btnLink'
+                                    className={`
+                                        btnLink
+                                        ${location.pathname === '/team' && 'bg-primary'}
+                                    `}
                                     tag={Link} to="/team"
                                 >
-                                    <h2 className='link-navigation'>
+                                    <h2 className={`
+                                        link-navigation
+                                        ${location.pathname === '/team' && 'text-light'}
+                                    `}>
                                         Times
                                     </h2>
                                 </NavLink>
