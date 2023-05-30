@@ -38,7 +38,12 @@ function createPokemonObjectFull(
     const abilities = responsePokemons.abilities.map((ability: any) => ability.ability.name);
     const types = responsePokemons.types.map((type: any) => type.type.name);
     const stats = responsePokemons.stats.map((stats: any) => ({ base_stat: stats.base_stat, name: stats.stat.name }));
-
+    const evolution = responseEvolution.chain.evolves_to.map((evolute: any) => {
+        if (evolute.evolves_to.length) {
+            return evolute.evolves_to[0]?.species?.name
+        }
+        return evolute.species?.name
+    })
     const pokemon: IPokemon = {
         id: responsePokemons.id,
         name: responsePokemons.name,
@@ -51,7 +56,7 @@ function createPokemonObjectFull(
         },
         types: types,
         stats: stats,
-        evolutionTo: responseEvolution.chain.evolves_to[0].evolves_to[0].species.name
+        evolutionTo: evolution
     }
 
     return pokemon;

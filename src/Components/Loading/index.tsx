@@ -7,7 +7,8 @@ export default function Loading() {
             width: '100%',
             display: "flex",
             justifyContent: "center",
-            paddingTop: '10%'
+            paddingTop: '10%',
+            paddingBottom: '10%',
         }}>
             <Spinner
                 color="warning"
