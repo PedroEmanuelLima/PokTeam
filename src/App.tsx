@@ -2,16 +2,17 @@ import React, { useContext } from 'react';
 import { Alert } from 'reactstrap';
 
 import NavBar from './Components/NavBar';
-import Home from './pages/Home';
 import './app.css';
 import { TeamContext } from './context/team.context';
+import { BrowserRouter  as Router } from 'react-router-dom';
+import RoutesApp from './routes';
 
 function App() {
 
   const { flashMesageProps, onDismiss } = useContext(TeamContext);
 
   return (
-    <>
+    <Router>
       <NavBar
         expand={true}
         color="warning"
@@ -28,9 +29,9 @@ function App() {
           }}
           toggle={onDismiss}
         />
-        <Home />
+        <RoutesApp />
       </div>
-    </>
+    </Router>
   );
 }
 

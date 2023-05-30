@@ -10,6 +10,7 @@ import {
     NavbarText,
     NavProps,
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 import './styles.css'
 import { IMAGE_NAV_BAR } from '../../base/Contants';
@@ -22,7 +23,7 @@ export default function NavBar(args: NavProps) {
     return (
         <div>
             <Navbar {...args} className='navBar'>
-                <NavbarBrand className='imageLogocontainer' href="/">
+                <NavbarBrand tag={Link} className='imageLogocontainer' to="/">
                     {/* eslint-disable-next-line jsx-a11y/alt-text */}
                     <img
                         src={IMAGE_NAV_BAR}
@@ -44,14 +45,20 @@ export default function NavBar(args: NavProps) {
                     <NavbarText>
                         <Nav className="me-auto" navbar >
                             <NavItem className='navItems'>
-                                <NavLink href="#" className='btnLink'>
+                                <NavLink
+                                    className='btnLink'
+                                    tag={Link} to="/"
+                                >
                                     <h2 className='link-navigation'>
                                         Pókemons
                                     </h2>
                                 </NavLink>
                             </NavItem>
                             <NavItem className='navItems'>
-                                <NavLink className='btnLink' href="#">
+                                <NavLink
+                                    className='btnLink'
+                                    tag={Link} to="/team"
+                                >
                                     <h2 className='link-navigation'>
                                         Times
                                     </h2>
