@@ -19,21 +19,19 @@ import { expandFullPokemon } from '../../base/Functions';
 import { TeamContext } from '../../context/team.context';
 
 interface ICardListPorps {
-    lista: IPokemonHome[],
-    addPokemon(pokemon: IPokemonHome): void,
-    removePokemon(pokemon: IPokemonHome): void
+    lista: IPokemonHome[]
 }
 
 interface IModalProps {
     open: boolean,
     pokemon: IPokemon | null
 }
-export default function CardList({ lista, addPokemon, removePokemon }: ICardListPorps) {
+export default function CardList({ lista }: ICardListPorps) {
     const [isImageLoading, setIsImageLoading] = useState(true);
     const [modalInformatios, setModalInformatios] = useState<IModalProps>({ open: false, pokemon: null });
     const [loadingFillPokemon, setloadingFillPokemon] = useState(true);
 
-    const { team } = useContext(TeamContext);
+    const { team, addPokemon, removePokemon } = useContext(TeamContext);
 
     const toggleModal = async (id: number | null) => {
         setloadingFillPokemon(true);
@@ -71,7 +69,7 @@ export default function CardList({ lista, addPokemon, removePokemon }: ICardList
                 key={modalInformatios.pokemon?.id}
             />
 
-            <Row className='mt-2'>
+            <Row className='mt-2 d-flex justify-content-center'>
                 {lista.map((pokemon) => (
                     <Col className='col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2' key={pokemon.id}>
                         <Card className='mt-4 text-center'>

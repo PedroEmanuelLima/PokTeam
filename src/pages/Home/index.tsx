@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from 'reactstrap';
 
 import './styles.css';
@@ -8,14 +8,12 @@ import CardList from "../../Components/CardList";
 import { IInforCurrentPage, IPokemonHome } from "../../base/Interfaces";
 import { expandPokemons } from "../../base/Functions";
 import Loading from "../../Components/Loading";
-import NotFound from "../../Components/NotFound";
+import NotFound from "../../Components/NotFoundOrEmpty";
 import Paginate from "../../Components/Paginate";
 import { clickInType } from "../../base/Types";
-import { TeamContext } from "../../context/team.context";
 
 export default function Home() {
 
-    const { addPokemon, removePokemon } = useContext(TeamContext);
     const [loading, setLoading] = useState(true);
     const [pokemonsList, setPokemonsList] = useState<IPokemonHome[]>([]);
     const [typesPokemons, setTypesPokemons] = useState<string[]>([]);
@@ -161,13 +159,11 @@ export default function Home() {
 
             {loading ? <Loading /> :
                 !pokemonsList.length ?
-                    <NotFound /> :
+                    <NotFound
+                        text="Não foi encontrado nenhum Pókemon :("
+                    /> :
                     <>
-                        <CardList
-                            lista={pokemonsList}
-                            addPokemon={addPokemon}
-                            removePokemon={removePokemon}
-                        />
+                        <CardList lista={pokemonsList} />
                         {infoCurrentPage && <Paginate {...infoCurrentPage} handleCurrentPage={handleCurrentPage} />}
                     </>
             }

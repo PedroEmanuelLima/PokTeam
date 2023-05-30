@@ -1,7 +1,13 @@
 import React from 'react';
+
 import { IMAGE_POKEMON_SAD } from '../../base/Contants';
 
-export default function NotFound() {
+interface NotFounProps {
+    text: string,
+    tag?: React.ReactNode
+}
+
+export default function NotFound({ text, tag }: NotFounProps) {
     return (
         <div style={{
             width: '100%',
@@ -17,7 +23,10 @@ export default function NotFound() {
             }}>
                 {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
                 <img src={IMAGE_POKEMON_SAD} alt="image sad"/>
-                <h4 className='text-primary'>Não foi encontrado nenhum Pókemon :(</h4>
+                <h4 className='text-primary'>
+                    {text}
+                    {tag}
+                </h4>
             </div>
         </div>
     )
