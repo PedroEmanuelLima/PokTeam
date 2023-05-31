@@ -53,9 +53,9 @@ export default function Home() {
             const response = await api.get(`/type/${typeSelected}`);
             console.log(response.data)
             const pokemons = await expandPokemons(response.data.pokemon);
-            const pokemonsFilter = pokemons.filter((item) => item.name.includes(nameSearch));
-            setInfoCurrentPage(null)
+            const pokemonsFilter = pokemons.filter((item) => item.name.includes(nameSearch.toLowerCase()));
             setPokemonsList(pokemonsFilter);
+            setInfoCurrentPage(null)
         } catch (error) {
             console.log(error);
             setPokemonsList([])
