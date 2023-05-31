@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Alert } from 'reactstrap';
 
 import NavBar from './Components/NavBar';
-import './app.css';
+import './App.css';
 import { TeamContext } from './context/team.context';
 import { BrowserRouter  as Router } from 'react-router-dom';
 import RoutesApp from './routes';
