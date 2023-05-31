@@ -18,7 +18,7 @@
 - [🚀 Funcionalidades](#-funcionalidades)
 - [👩🏻‍💻 Tecnologias](#-tecnologias)
 - [🏳️ Como baixar e executar o projeto](#-como-baixar-e-executar-o-projeto)
-- [🏳️ ✅ Resultado (Preview)](#✅-resultado-preview)
+- [✅ Resultado (Preview)](#-resultado-preview)
 
 ---
 
