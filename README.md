@@ -64,7 +64,7 @@ Para clonar e executar esta aplicação na sua máquina é necessário ter insta
 ```bash
 
   # Clonar o repositório
-  $ git clone https://github.com/PedroEmanuelLima/Localiza-P2W.git
+  $ git clone https://github.com/PedroEmanuelLima/PokTeam.git
 
   # Entrar no diretório
   $ cd PokTeam
