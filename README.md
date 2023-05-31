@@ -1,46 +1,93 @@
-# Getting Started with Create React App
+<h1 align="center">
+  PokTeam
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br />
 
-## Available Scripts
+<div align="center">
+  <a href="#" target="_blank" rel="noreffer">
+    <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel">
+    <h4>PokTeam</h4>
+  </a>
+</div>
 
-In the project directory, you can run:
+## Indice
 
-### `npm start`
+- [Indice](#indice)
+- [🧾 Sobre](#-sobre)
+- [🚀 Funcionalidades](#-funcionalidades)
+- [👩🏻‍💻 Tecnologias](#-tecnologias)
+- [🏳️ Como baixar e executar o projeto](#-como-baixar-e-executar-o-projeto)
+- [🏳️ ✅ Resultado (Preview)](#✅-resultado-preview)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🧾 Sobre
 
-### `npm test`
+O PokTeam é um aplicativo web que lista todos os Pókemons da api [https://pokeapi.co/](https://pokeapi.co/).
+No site, podemos ver todos os Pókemons disponiveis, pesquisar por nome e aplicar filtro de tipo, ver mais informações de um Pokmon expecifico, além da criação de um time com até 5 Pókemons, esse time ficará salvo no navegador.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🚀 Funcionalidades
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Listagem de pókemons
+- Adicionar e remover pókemons do time
+- Filtrar pókemons por:
+  - Nome (informar no input o nome correto do pókemon)
+  - Tipo (em um filtro escolher um tipo que deseja usar de filtro)
+- Exibir mais informações sobre um pókemon
+- Contruir um time com até 5 pókemons
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 👩🏻‍💻 Tecnologias
 
-### `npm run eject`
+#### O projeto foi desenvolvido utilizando as seguintes tecnologias:
+- [React Native](https://reactnative.dev/docs/getting-started)
+- [Expo](https://docs.expo.dev/)
+- [Expo GO](https://expo.dev/client)
+- [VS Code](https://code.visualstudio.com/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🏳️ Como baixar e executar o projeto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Para clonar e executar esta aplicação na sua máquina é necessário ter instalado:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [Git](https://git-scm.com/)
+- [Npm](https://docs.npmjs.com/about-npm)
+- [Node.js](https://nodejs.org/en/)
 
-## Learn More
+```bash
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  # Clonar o repositório
+  $ git clone https://github.com/PedroEmanuelLima/Localiza-P2W.git
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  # Entrar no diretório
+  $ cd PokTeam
+
+  # Instalar as dependências
+  $ npm install ou yarn install
+
+  # Iniciar o projeto
+  $ npm start
+
+```
+
+<br/>
+
+## ✅ Resultado (Preview):
+
+Web | Mobile
+:--------- | :------:
+<img style="width: 80%;" src="Demo/PokTeam_Web.gif"> | <img src="Demo/PokTeam_Mobile.gif">
+
+<br />
+
+Desenvolvimento:
+| [<img src="https://avatars.githubusercontent.com/u/58365600?v=4" width=115><br><sub>Pedro Emanuel</sub>](https://github.com/PedroEmanuelLima) |
+| :---: |
+<br />
