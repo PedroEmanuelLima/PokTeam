@@ -80,10 +80,18 @@ Para clonar e executar esta aplicação na sua máquina é necessário ter insta
 <br/>
 
 ## ✅ Resultado (Preview):
-
-Web | Mobile
-:--------- | :------:
-<img style="width: 80%;" src="Demo/PokTeam_Web.gif"> | <img src="Demo/PokTeam_Mobile.gif">
+# 
+Tela inicial com ferramenta para filtros, listagem de pokemons, modal com mais finformações e paginação:
+<img src="Demo/PokTeam_Pagi_Filtro_List.gif">
+# 
+Adição, remoção e visualização de time de pokemons:
+<img src="Demo/PokTeam_Add_Rem.gif">
+# 
+Salvando estado do time localmente para não perder quando sair ou recarregar a página:
+<img src="Demo/PokTeam_LocalStore.gif">
+# 
+Demonstranação de responsividade:
+<img src="Demo/PokTeam_Mobile.gif">
 
 <br />
 
