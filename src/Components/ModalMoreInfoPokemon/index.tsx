@@ -13,6 +13,7 @@ import { IPokemon } from '../../base/Interfaces';
 import './style.css'
 import Loading from '../Loading';
 import { TeamContext } from '../../context/team.context';
+import StatusComponent from '../StatusComponent';
 
 interface IModalMoreInfoPokemonProps {
   pokemon: IPokemon | null,
@@ -93,20 +94,15 @@ export default function ModalMoreInfoPokemon({
                   </div>
                 </div>
 
-                <Table
-                  bordered
-                  hover
-                >
-                  <thead>
-                    <tr>
-                      {pokemon?.stats.map((status) => <th>{status.name}</th>)}
-                    </tr>
-                    <tr>
-                      {pokemon?.stats.map((status) => <th>{status.base_stat}</th>)}
-                    </tr>
-                  </thead>
-                </Table>
-
+                <div className='container-status-info'>
+                  {pokemon?.stats
+                    .sort((a, b) => a.name.length - b.name.length)
+                    .map((status) => <StatusComponent
+                      status={status.name}
+                      value={status.base_stat}
+                    />)
+                  }
+                </div>
                 <div>
                   <h4 className='informations-properties'>Habilidades:</h4>
                   <ListGroup horizontal>

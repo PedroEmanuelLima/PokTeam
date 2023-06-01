@@ -1,0 +1,20 @@
+.item-status {
+    border: 1px solid #DDD;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    margin-top: 8px;
+    border-radius: 8px;
+}
+
+.text {
+    font-size: 1.1rem;
+}
+
+.name-line {
+    border-bottom: 2px solid #DDD;
+    font-weight: 500;
+}

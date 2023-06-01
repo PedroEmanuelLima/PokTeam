@@ -80,6 +80,7 @@
 @media (min-width: 768px) {
     .drop-toggle {
         width: 12%;
+        font-size: 1.4rem !important;
     }
 }
 

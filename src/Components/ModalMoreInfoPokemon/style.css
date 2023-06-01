@@ -6,6 +6,10 @@
     width: 45%;
 }
 
+.informations {
+    flex-wrap: wrap;
+}
+
 .informations-properties {
     font-size: 2rem;
 }
@@ -14,6 +18,13 @@
     margin-left: 8px;
     font-size: 1.5rem;
     font-weight:400 ;
+}
+
+.container-status-info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 @media (max-width: 576px) {
