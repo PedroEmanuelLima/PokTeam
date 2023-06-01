@@ -57,7 +57,7 @@ export default function NavBar(args: NavProps) {
                                         link-navigation
                                         ${location.pathname === '/' && 'text-light'}
                                     `}>
-                                        Pókemons
+                                        Pokémons
                                     </h2>
                                 </NavLink>
                             </NavItem>
@@ -73,7 +73,7 @@ export default function NavBar(args: NavProps) {
                                         link-navigation
                                         ${location.pathname === '/team' && 'text-light'}
                                     `}>
-                                        Times
+                                        Meu Time
                                     </h2>
                                 </NavLink>
                             </NavItem>

@@ -160,7 +160,7 @@ export default function Home() {
             {loading ? <Loading /> :
                 !pokemonsList.length ?
                     <NotFound
-                        text="Não foi encontrado nenhum Pókemon :("
+                        text="Não foi encontrado nenhum Pokémon :("
                     /> :
                     <>
                         <CardList lista={pokemonsList} />
