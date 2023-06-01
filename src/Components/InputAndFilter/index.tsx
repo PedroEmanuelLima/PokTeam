@@ -8,7 +8,7 @@ import {
     DropdownMenu,
     DropdownItem,
 } from 'reactstrap';
-import { BsSearch, BsFilterCircleFill, BsXCircle } from "react-icons/bs";
+import { BsSearch, BsXCircle } from "react-icons/bs";
 
 import './styles.css';
 

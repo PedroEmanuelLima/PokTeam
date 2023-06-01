@@ -145,6 +145,13 @@ export default function Home() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [typeSelected]);
 
+    useEffect(() => {
+        if (!nameSearch.trim()) {
+            handleSearchPokemon();
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [nameSearch])
+
     return (
         <Container>
             {/* <Alert {...alertPropsNotify} className="mt-5"/> */}
